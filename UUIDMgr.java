@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.foo.SeqType;
+import com.foo.SeqData;
 public class UUIDMgr
 {
     /**
@@ -54,7 +55,7 @@ public class UUIDMgr
             for (int i = 1; i < SeqType.NUM_SEQ; i++)
             {
                 int key = generateSeqKey(i);
-                SeqData seqData = DaoManager.getSeqTableDao().getBySeqType(key);
+                SeqData seqData = DaoManager.getSeqTableDao().getBySeqType(key); //此处读表，
                 if (seqData == null)
                 {
                     seqData = new SeqData();
